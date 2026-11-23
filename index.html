@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Annur Atieyah Rokumar — IT Support professional building a career in Cloud Engineering.">
+  <title>Annur Atieyah | Cloud & IT Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111c2e;
+      --panel-light: #17243a;
+      --text: #edf3fc;
+      --muted: #a7b5c9;
+      --accent: #79b8ff;
+      --accent-2: #9be4d3;
+      --line: rgba(190, 210, 238, .15);
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 85% 5%, #1b3150 0, transparent 28rem), var(--bg);
+      color: var(--text);
+      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 18, 32, .82);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 750; letter-spacing: -.03em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: .9rem; }
+    .hero { padding: 105px 0 88px; display: grid; grid-template-columns: 1.5fr .8fr; gap: 55px; align-items: center; }
+    .eyebrow { color: var(--accent-2); font-size: .78rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.3rem); line-height: 1.04; letter-spacing: -.065em; margin: 18px 0; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); max-width: 650px; font-size: 1.1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 11px 18px; border-radius: 10px; font-weight: 700; border: 1px solid var(--line); }
+    .button.primary { background: var(--accent); color: #081321; border-color: var(--accent); }
+    .button:hover { transform: translateY(-2px); transition: .2s ease; }
+    .hero-card { background: linear-gradient(145deg, rgba(121,184,255,.15), rgba(155,228,211,.06)); border: 1px solid var(--line); border-radius: 22px; padding: 27px; box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+    .avatar { width: 66px; height: 66px; border-radius: 18px; display: grid; place-items: center; background: var(--accent); color: #081321; font-size: 1.45rem; font-weight: 850; margin-bottom: 20px; }
+    .hero-card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    .hero-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .quick-facts { display: grid; gap: 13px; margin-top: 24px; }
+    .fact { display: flex; justify-content: space-between; gap: 15px; border-top: 1px solid var(--line); padding-top: 12px; font-size: .9rem; }
+    .fact span:first-child { color: var(--muted); }
+    section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-heading { margin-bottom: 30px; }
+    .section-heading h2 { margin: 7px 0; font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -.045em; }
+    .section-heading p { color: var(--muted); margin: 0; max-width: 680px; }
+    .about-grid, .two-col { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
+    .card { background: rgba(17,28,46,.82); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .card h3 { margin: 0 0 9px; font-size: 1.08rem; }
+    .card p { color: var(--muted); margin: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 17px; }
+    .chip { color: #d8e8fb; background: var(--panel-light); border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; font-size: .83rem; }
+    .timeline { display: grid; gap: 17px; }
+    .role-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .date { color: var(--accent-2); font-size: .86rem; }
+    .subtle { color: var(--muted); font-size: .92rem; }
+    ul { color: var(--muted); padding-left: 20px; margin-bottom: 0; }
+    li { margin: 6px 0; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
+    .project-tag { color: var(--accent-2); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .project-card h3 { margin-top: 10px; }
+    .project-card p { margin-bottom: 15px; }
+    .project-card a { color: var(--accent); font-size: .9rem; font-weight: 700; }
+    .contact { display: flex; justify-content: space-between; align-items: center; gap: 25px; flex-wrap: wrap; }
+    footer { padding: 27px 0; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 760px) {
+      .hero, .about-grid, .two-col, .project-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 70px; gap: 30px; }
+      .nav-links { gap: 12px; font-size: .8rem; }
+      nav { align-items: flex-start; padding: 17px 0; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">ANNUR<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container hero" id="home">
+      <div>
+        <div class="eyebrow">IT Support · Cloud Engineering</div>
+        <h1>Hi, I'm<br><span>Annur Atieyah.</span></h1>
+        <p class="lead">Technical Support professional with a background in computer systems and web hosting. I'm building my skills in cloud infrastructure, Linux, networking and automation, with the goal of growing into a Cloud Engineer role.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">Explore my work</a>
+          <a class="button" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="avatar">AR</div>
+        <h2>Currently focused on</h2>
+        <p>Developing practical cloud and infrastructure skills through hands-on learning and projects.</p>
+        <div class="quick-facts">
+          <div class="fact"><span>Career interest</span><strong>Cloud / DevOps</strong></div>
+          <div class="fact"><span>Core foundation</span><strong>IT Support</strong></div>
+          <div class="fact"><span>Based in</span><strong>Malaysia</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2>From troubleshooting to cloud infrastructure.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card">
+            <h3>About me</h3>
+            <p>I have experience supporting web hosting environments and troubleshooting website, server, DNS and email-related issues. My technical support background has helped me develop a structured approach to problem-solving, customer communication and investigating technical incidents. I'm now expanding that foundation into cloud technologies and infrastructure automation.</p>
+          </div>
+          <div class="card">
+            <h3>What I'm working towards</h3>
+            <p>Building confidence with AWS services, Linux administration, networking fundamentals and Infrastructure as Code, while creating practical projects that demonstrate what I can do.</p>
+            <div class="chips"><span class="chip">AWS</span><span class="chip">Linux</span><span class="chip">Networking</span><span class="chip">Terraform</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Professional background</div>
+          <h2>Experience</h2>
+          <p>My experience supporting customers and maintaining web hosting services.</p>
+        </div>
+        <div class="timeline">
+          <article class="card">
+            <div class="role-top">
+              <div>
+                <h3>Shift Support Engineer</h3>
+                <div class="subtle">Shinjiru Technology Sdn. Bhd.</div>
+              </div>
+              <div class="date">Feb 2025 – Sep 2026</div>
+            </div>
+            <ul>
+              <li>Provided technical support for web hosting services and investigated server, website, DNS and email-related issues.</li>
+              <li>Worked with platforms and tools including cPanel, WHM, Plesk, Cloudflare and WordPress.</li>
+              <li>Performed troubleshooting using logs, command-line utilities and service checks to identify possible causes of incidents.</li>
+              <li>Communicated technical findings and resolutions clearly to customers and internal teams.</li>
+              <li>Escalated complex infrastructure issues with relevant diagnostic details and evidence.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Technical toolkit</div>
+          <h2>Skills & technologies</h2>
+          <p>Tools and areas I've worked with or am currently developing.</p>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h3>Technical support & infrastructure</h3>
+            <div class="chips">
+              <span class="chip">cPanel / WHM</span><span class="chip">Plesk</span><span class="chip">Linux</span>
+              <span class="chip">DNS</span><span class="chip">Cloudflare</span><span class="chip">WordPress</span>
+              <span class="chip">Email troubleshooting</span><span class="chip">Server monitoring</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Cloud & automation learning</h3>
+            <div class="chips">
+              <span class="chip">AWS EC2</span><span class="chip">AWS VPC</span><span class="chip">AWS Lambda</span>
+              <span class="chip">Amazon RDS</span><span class="chip">Terraform</span><span class="chip">Git / GitHub</span>
+              <span class="chip">Networking</span><span class="chip">Linux administration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Hands-on learning</div>
+          <h2>Projects</h2>
+          <p>Below is several project that I have done to gain hands on experince in the Cloud and Infrastructure. </p>
+        </div>
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="project-tag">AWS · Terraform</div>
+            <h3>Create S3 Buckets with Terraform</h3>
+            <p>This project demonstrates how to provision and secure an Amazon S3 bucket using Terraform (Infrastructure as Code).</p>
+            <a href="https://github.com/Annur01/aws-s3-terraform-project" target="_blank" rel="noreferrer"> aws-s3-terraform-project ↗</a>
+          </article>
+          <article class="card project-card">
+            <div class="project-tag">AWS · Terraform</div>
+            <h3>Deploy a Web App on AWS with Terraform</h3>
+            <p>This project demonstrates how to deploy a web application infrastructure on Amazon Web Services (AWS) using Terraform.</p>
+            <a href="https://github.com/Annur01/terraform-web-app-aws" target="_blank" rel="noreferrer"> terraform-web-app-aws ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Learning journey</div>
+          <h2>Education & certifications</h2>
+        </div>
+        <div class="timeline">
+          <article class="card">
+            <h3>Bachelor's Degree in Computer Engineering Technology (Computer Systems)</h3>
+            <p class="subtle">Add your university name · Graduated 2024</p>
+          </article>
+          <article class="card">
+            <h3>AWS re/Start</h3>
+            <p class="subtle">Cloud computing training programme</p>
+          </article>
+          <article class="card">
+            <h3>CompTIA Cloud Essentials</h3>
+            <p class="subtle">Add credential date or verification link if available</p>
+          </article>
+          <article class="card">
+            <h3>AWS SimuLearn – Cloud Practitioner</h3>
+            <p class="subtle">Training badge</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact">
+        <div>
+          <div class="eyebrow">Let's connect</div>
+          <h2 style="font-size:2rem; margin:8px 0">I'm Looking for an opportunity in clouds, infrastructure or DevOps role.</h2>
+          <p class="lead" style="font-size:1rem"> I can start immediately. Email is the fastest way to reach me..</p>
+        </div>
+        <div class="actions">
+          <!-- Replace the email and profile links below with your own public details. -->
+          <a class="button primary" href="mailto:annuratieyah@gmail.com">Email me</a>
+          <a class="button" href="https://www.linkedin.com/in/annuratieyah/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Annur Atieyah Rokumar. Built with HTML & CSS and hosted on GitHub Pages.</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
