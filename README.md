@@ -3,7 +3,7 @@
 
 A personal portfolio website showcasing my professional background, technical skills, work experience, education, and projects.
 
-🌐 **Live Website:** (https://annur.github.io)](https://annur01.github.io/annur-portfolio/#home)
+🌐 **Live Website:** [[https://annur01.github.io/annur-portfolio/#home](https://annur01.github.io/annur-portfolio/#home)
 
 ## About Me
 
